@@ -2,6 +2,6 @@
    "name":"gatsby-wp-starter",
    "dependencies":{
       "@mailchimp/mailchimp_marketing":"latest",
-      "@md5":"latest"
+      "md5":"latest"
    }
 }
