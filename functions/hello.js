@@ -7,7 +7,7 @@ mailchimp.setConfig({
   server: "us1",
 });
 
-const email = "mjpc_10@hotmail.com";
+const email = "mjpalacios0205@gmail.com";
 const listId = "2387a9c0f9";
 const subscriberHash = md5(email.toLowerCase());
 
