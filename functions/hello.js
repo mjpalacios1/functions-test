@@ -10,7 +10,7 @@ mailchimp.setConfig({
 const email = "mjpalacios0205@gmail.com";
 const listId = "2387a9c0f9";
 const subscriberHash = md5(email.toLowerCase());
-
+console.log(subscriberHash);
 async function run() {
   const response = await mailchimp.lists.updateListMemberTags(
     listId,
