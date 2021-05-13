@@ -26,7 +26,7 @@ exports.handler = async (event, context) => {
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
       },
-      method: 'put',
+      method: 'post',
       url: apiRoot + emailhash + "/tags",
       data:{
           tags: [
@@ -48,7 +48,8 @@ exports.handler = async (event, context) => {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Content-Type",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
+          "Access-Control-Allow-Methods": "GET, POST, 
+          , DELETE,OPTION",
         },
         statusCode:200,
         body: JSON.stringify(res.data),
@@ -60,7 +61,7 @@ exports.handler = async (event, context) => {
             headers: {
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Headers": "Content-Type",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
+              "Access-Control-Allow-Methods": " POST,OPTION",
             },
             statusCode: 500,
             body: JSON.stringify(err.response.data),
