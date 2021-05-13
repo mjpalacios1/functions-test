@@ -3,7 +3,6 @@ var crypto = require('crypto');
 
 const apiRoot = 'https://us1.api.mailchimp.com/3.0/lists/2387a9c0f9/members/';
 
-
 exports.handler = async (event, context) => {
   try {
     const email ="mjplacios1@espe.edu.ec";
@@ -28,11 +27,8 @@ exports.handler = async (event, context) => {
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
       },
       method: 'put',
-      url: apiRoot + emailhash,
+      url: apiRoot + emailhash + "/tags",
       data:{
-        email_address:email,
-        status:'subscribed',
-        merge_fields:{
           tags: [
             [
               {
@@ -41,7 +37,6 @@ exports.handler = async (event, context) => {
               },          
             ],
           ],
-       }
       },
       auth: {
         'username': 'mjpalacios1',
