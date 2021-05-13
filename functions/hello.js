@@ -5,9 +5,9 @@ const apiRoot = 'https://us1.api.mailchimp.com/3.0/lists/2387a9c0f9/members/';
 
 exports.handler = async (event, context) => {
   try {
-    const email = event.email;
-    const tag = event.tagName;
-    const apiKey = event.apiKey;
+    const email = event.queryStringParameters.email;
+    const tag = event.queryStringParameters.tagName;
+    const apiKey = event.queryStringParameters.apiKey;
     if(!email) {
       return {
         statusCode: 500,
