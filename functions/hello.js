@@ -5,7 +5,9 @@ const apiRoot = 'https://us1.api.mailchimp.com/3.0/lists/2387a9c0f9/members/';
 
 exports.handler = async (event, context) => {
   try {
-    const email ="mjpalacios0205@gmail.com";
+    const email = event.queryStringParameters.email;
+    const tag = event.queryStringParameters.tagName;
+    const apiKey = event.queryStringParameters.apiKey;
     if(!email) {
       return {
         statusCode: 500,
@@ -27,14 +29,14 @@ exports.handler = async (event, context) => {
           tags: 
             [
               {
-                name: "test",
+                name: tag,
                 status: "active",
               },          
             ],
       },
       auth: {
-        'username': 'mjpalacios1',
-        'password': '3ccb284bebb7cdcc848eb6f2d87a7adb-us1'
+        'username': '',
+        'password': apiKey,
       },
 
     }).then(res => {
