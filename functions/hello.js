@@ -31,7 +31,15 @@ exports.handler = async (event, context) => {
       url: apiRoot + emailhash,
       data:{
         email_address:email,
-        status:'subscribed'
+        status:'subscribed',
+        tags: [
+          [
+            {
+              name: "test",
+              status: "active",
+            },          
+          ],
+        ],
       },
       auth: {
         'username': 'mjpalacios1',
