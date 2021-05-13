@@ -5,7 +5,7 @@ const apiRoot = 'https://us1.api.mailchimp.com/3.0/lists/2387a9c0f9/members/';
 
 exports.handler = async (event, context) => {
   try {
-    const email ="mjplacios1@espe.edu.ec";
+    const email ="mjpalacios0205@gmail.com";
     if(!email) {
       return {
         statusCode: 500,
