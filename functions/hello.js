@@ -21,11 +21,6 @@ exports.handler = async (event, context) => {
     let emailhash = crypto.createHash('md5').update(email).digest("hex");
 
     return axios({
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
-      },
       method: 'post',
       url: apiRoot + emailhash + "/tags",
       data:{
@@ -48,8 +43,7 @@ exports.handler = async (event, context) => {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Content-Type",
-          "Access-Control-Allow-Methods": "GET, POST, 
-          , DELETE,OPTION",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
         },
         statusCode:200,
         body: JSON.stringify(res.data),
