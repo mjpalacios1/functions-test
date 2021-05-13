@@ -24,14 +24,13 @@ exports.handler = async (event, context) => {
       method: 'post',
       url: apiRoot + emailhash + "/tags",
       data:{
-          tags: [
+          tags: 
             [
               {
                 name: "test",
                 status: "active",
               },          
             ],
-          ],
       },
       auth: {
         'username': 'mjpalacios1',
