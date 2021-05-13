@@ -1,10 +1,11 @@
 const axios = require('axios');
 var crypto = require('crypto');
 
-const apiRoot = 'https://us1.api.mailchimp.com/3.0/lists/2387a9c0f9/members/';
 
 exports.handler = async (event, context) => {
-  try {
+  try { 
+    const listId = event.queryStringParameters.list;
+    const apiRoot = `https://us1.api.mailchimp.com/3.0/lists/${listId}/members/`;
     const email = event.queryStringParameters.email;
     const tag = event.queryStringParameters.tagName;
     const apiKey = event.queryStringParameters.apiKey;
