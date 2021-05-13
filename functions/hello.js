@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
     const email = event.queryStringParameters.email;
     const tag = event.queryStringParameters.tagName;
     const apiKey = event.queryStringParameters.apiKey;
-    if(!email) {
+    if(!email || !listId || !tag || !apiKey) {
       return {
         statusCode: 500,
         headers: {
@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE,OPTION",
         },
-        body:JSON.stringify(event),
+        body: "Missing data",
       };
     }
 
